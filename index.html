@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حنان | مصممة جرافيك</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">حنان</div>
+        <ul class="nav-links">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#about">من أنا</a></li>
+            <li><a href="#portfolio">أعمالي</a></li>
+            <li><a href="#services">خدماتي</a></li>
+            <li><a href="#contact">تواصل معي</a></li>
+        </ul>
+        <div class="language-switch">
+            <button class="lang-btn" onclick="toggleLanguage()">EN</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="arabic">مرحباً، أنا حنان</h1>
+            <h1 class="english">Hello, I'm Hanan</h1>
+            <p class="arabic">مصممة جرافيك مبدعة</p>
+            <p class="english">Creative Graphic Designer</p>
+            <div class="cta-buttons">
+                <a href="#portfolio" class="btn primary-btn">عرض أعمالي</a>
+                <a href="#contact" class="btn secondary-btn">تواصل معي</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title arabic">من أنا</h2>
+            <h2 class="section-title english">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="arabic">
+                        مصممة جرافيك شغوفة بتحويل الأفكار إلى تجارب بصرية متميزة. أتمتع بخبرة في تصميم الهوية البصرية، والمواد التسويقية، وتصميم المواقع الإلكترونية.
+                    </p>
+                    <p class="english">
+                        A passionate graphic designer dedicated to transforming ideas into exceptional visual experiences. Experienced in brand identity, marketing materials, and web design.
+                    </p>
+                    
+                    <!-- Interactive Design Tool -->
+                    <div class="interactive-design-tool">
+                        <h3 class="arabic">تجربة التصميم</h3>
+                        <h3 class="english">Design Playground</h3>
+                        
+                        <div class="color-mixer">
+                            <div class="mixer-controls">
+                                <div class="color-sliders">
+                                    <div class="slider-group">
+                                        <label class="arabic">الأحمر</label>
+                                        <label class="english">Red</label>
+                                        <input type="range" min="0" max="255" value="255" class="color-slider" data-color="r">
+                                    </div>
+                                    <div class="slider-group">
+                                        <label class="arabic">الأخضر</label>
+                                        <label class="english">Green</label>
+                                        <input type="range" min="0" max="255" value="107" class="color-slider" data-color="g">
+                                    </div>
+                                    <div class="slider-group">
+                                        <label class="arabic">الأزرق</label>
+                                        <label class="english">Blue</label>
+                                        <input type="range" min="0" max="255" value="107" class="color-slider" data-color="b">
+                                    </div>
+                                </div>
+                                <div class="color-display">
+                                    <div class="color-preview"></div>
+                                    <div class="color-code">
+                                        <span>#FF6B6B</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="design-principle">
+                                <div class="principle-title arabic">العناصر الأساسية للتصميم</div>
+                                <div class="principle-title english">Core Design Elements</div>
+                                <div class="design-elements">
+                                    <div class="design-element" data-type="contrast">
+                                        <i class="fas fa-adjust"></i>
+                                        <span class="arabic">التباين</span>
+                                        <span class="english">Contrast</span>
+                                    </div>
+                                    <div class="design-element" data-type="balance">
+                                        <i class="fas fa-balance-scale"></i>
+                                        <span class="arabic">التوازن</span>
+                                        <span class="english">Balance</span>
+                                    </div>
+                                    <div class="design-element" data-type="rhythm">
+                                        <i class="fas fa-wave-square"></i>
+                                        <span class="arabic">الإيقاع</span>
+                                        <span class="english">Rhythm</span>
+                                    </div>
+                                    <div class="design-element" data-type="proportion">
+                                        <i class="fas fa-ruler-combined"></i>
+                                        <span class="arabic">التناسب</span>
+                                        <span class="english">Proportion</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills">
+                    <div class="skill-item">
+                        <span class="skill-name arabic">تصميم الهوية البصرية</span>
+                        <span class="skill-name english">Brand Identity</span>
+                        <div class="skill-bar"><div class="skill-level" style="width: 95%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name arabic">تصميم المواد التسويقية</span>
+                        <span class="skill-name english">Marketing Materials</span>
+                        <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name arabic">تصميم المواقع</span>
+                        <span class="skill-name english">Web Design</span>
+                        <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
+                    </div>
+                    
+                    <!-- Graphic Design Tools -->
+                    <div class="graphic-tools">
+                        <div class="graphic-tools-title arabic">أدوات التصميم</div>
+                        <div class="graphic-tools-title english">Design Tools</div>
+                        <div class="tools-icons">
+                            <div class="tool-box" data-tool="Photoshop">
+                                <i class="fab fa-adobe"></i>
+                                <span>Ps</span>
+                            </div>
+                            <div class="tool-box" data-tool="Illustrator">
+                                <i class="fab fa-adobe"></i>
+                                <span>Ai</span>
+                            </div>
+                            <div class="tool-box" data-tool="InDesign">
+                                <i class="fab fa-adobe"></i>
+                                <span>Id</span>
+                            </div>
+                            <div class="tool-box" data-tool="XD">
+                                <i class="fab fa-adobe"></i>
+                                <span>Xd</span>
+                            </div>
+                            <div class="tool-box" data-tool="Figma">
+                                <i class="fab fa-figma"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title arabic">أعمالي</h2>
+            <h2 class="section-title english">My Work</h2>
+            
+            <!-- Portfolio Navigation -->
+            <div class="portfolio-navigation">
+                <div class="portfolio-filter">
+                    <button class="filter-btn active" data-filter="all">
+                        <span class="arabic">الكل</span>
+                        <span class="english">All</span>
+                    </button>
+                    <button class="filter-btn" data-filter="branding">
+                        <span class="arabic">الهوية البصرية</span>
+                        <span class="english">Branding</span>
+                    </button>
+                    <button class="filter-btn" data-filter="web">
+                        <span class="arabic">تصميم الويب</span>
+                        <span class="english">Web Design</span>
+                    </button>
+                    <button class="filter-btn" data-filter="marketing">
+                        <span class="arabic">التسويق</span>
+                        <span class="english">Marketing</span>
+                    </button>
+                </div>
+                <div class="portfolio-view-toggle">
+                    <button class="view-btn active" data-view="grid">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button class="view-btn" data-view="masonry">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="view-btn" data-view="showcase">
+                        <i class="fas fa-columns"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Portfolio Showcase -->
+            <div class="portfolio-showcase">
+                <!-- Projects will be added dynamically via JavaScript -->
+            </div>
+            
+            <!-- Portfolio Pagination -->
+            <div class="portfolio-pagination">
+                <!-- Pagination will be added dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div class="project-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content">
+                <div class="modal-gallery">
+                    <div class="gallery-main">
+                        <img src="" alt="">
+                    </div>
+                    <div class="gallery-thumbs">
+                        <!-- Thumbnails will be added dynamically -->
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <div class="project-header">
+                        <h3 class="arabic"></h3>
+                        <h3 class="english"></h3>
+                        <div class="project-category">
+                            <span class="arabic"></span>
+                            <span class="english"></span>
+                        </div>
+                    </div>
+                    <div class="project-description">
+                        <p class="arabic"></p>
+                        <p class="english"></p>
+                    </div>
+                    <div class="project-details">
+                        <div class="detail-item">
+                            <h4 class="arabic">الأدوات المستخدمة</h4>
+                            <h4 class="english">Tools Used</h4>
+                            <div class="tools-list">
+                                <!-- Tools will be added dynamically -->
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <h4 class="arabic">الألوان</h4>
+                            <h4 class="english">Colors</h4>
+                            <div class="color-palette">
+                                <!-- Colors will be added dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="btn primary-btn arabic">عرض المشروع</a>
+                        <a href="#" class="btn primary-btn english">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title arabic">خدماتي</h2>
+            <h2 class="section-title english">My Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3 class="arabic">تصميم الهوية البصرية</h3>
+                    <h3 class="english">Brand Identity Design</h3>
+                    <p class="arabic">تصميم هوية بصرية متكاملة تعبر عن قيم علامتك التجارية</p>
+                    <p class="english">Creating a comprehensive visual identity that reflects your brand values</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-ad"></i>
+                    <h3 class="arabic">تصميم المواد التسويقية</h3>
+                    <h3 class="english">Marketing Materials</h3>
+                    <p class="arabic">تصميم مواد تسويقية جذابة وفعالة</p>
+                    <p class="english">Designing attractive and effective marketing materials</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3 class="arabic">تصميم المواقع</h3>
+                    <h3 class="english">Web Design</h3>
+                    <p class="arabic">تصميم مواقع إلكترونية عصرية وسهلة الاستخدام</p>
+                    <p class="english">Creating modern and user-friendly website designs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title arabic">تواصل معي</h2>
+            <h2 class="section-title english">Contact Me</h2>
+            <div class="contact-content">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" required>
+                        <label for="name" class="arabic">الاسم</label>
+                        <label for="name" class="english">Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required>
+                        <label for="email" class="arabic">البريد الإلكتروني</label>
+                        <label for="email" class="english">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" required></textarea>
+                        <label for="message" class="arabic">الرسالة</label>
+                        <label for="message" class="english">Message</label>
+                    </div>
+                    <button type="submit" class="btn primary-btn arabic">إرسال</button>
+                    <button type="submit" class="btn primary-btn english">Send</button>
+                </form>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="arabic">جميع الحقوق محفوظة © 2024</p>
+            <p class="english">All rights reserved © 2024</p>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -75,11 +75,11 @@ const portfolioItems = [
             arabic: 'قمت بتصميم هوية بصرية متكاملة لشركة ناشئة في مجال الخدمات المالية. تضمن المشروع تصميم شعار مميز وفريد يعكس قيم الشركة ورؤيتها، واختيار مجموعة ألوان متناسقة تعبر عن روح العلامة التجارية، بالإضافة إلى تحديد الخطوط المناسبة واستخدامها في جميع العناصر. كما شمل المشروع تصميم قرطاسية الشركة من بطاقات عمل وأوراق رسمية ومغلفات وغيرها من المواد المطبوعة.',
             english: 'I designed a comprehensive brand identity for a Finance startup. The project included creating a unique logo that reflects the company\'s values and vision, selecting a harmonious color palette that expresses the brand spirit, as well as defining appropriate typography and using it across all elements. The project also included designing company stationery from business cards, letterheads, envelopes, and other printed materials.'
         },
-        image: '/images/projects/alyazan/image.png',
+        image: '/Hanan-Salih/images/projects/alyazan/image.png',
         images: [
-            '/images/projects/alyazan/تصميم بدون عنوان (3).png',
-            '/images/projects/alyazan/تصميم بدون عنوان (4).png',
-            '/images/projects/alyazan/تصميم بدون عنوان (6).png'
+            '/Hanan-Salih/images/projects/alyazan/تصميم بدون عنوان (3).png',
+            '/Hanan-Salih/images/projects/alyazan/تصميم بدون عنوان (4).png',
+            '/Hanan-Salih/images/projects/alyazan/تصميم بدون عنوان (6).png'
         ],
         category: 'branding',
         tools: [
@@ -103,11 +103,9 @@ const portfolioItems = [
             arabic: 'قمت بتصميم واجهة مستخدم متكاملة لموقع تعليمي متخصص في التعليم الالكتروني. ركزت في التصميم على سهولة الاستخدام وتجربة مستخدم سلسة، مع توفير ميزات تفاعلية لتعزيز التعلم. تضمن المشروع تصميم الصفحة الرئيسية وصفحات الدورات التدريبية وصفحات الملف الشخصي، بالإضافة إلى ميزات التفاعل مع المعلمين والطلاب.',
             english: 'I designed a comprehensive user interface for an educational website specializing in e-learning. In the design, I focused on ease of use and a smooth user experience, with interactive features to enhance learning. The project included designing the homepage, course pages, profile pages, as well as features for interaction with teachers and students.'
         },
-        image: '/images/projects/khatwa/khatwa.png',
+        image: '/Hanan-Salih/images/projects/khatwa/khatwa.png',
         images: [
             'https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-4.0.3',
-            'https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-4.0.3',
-            'https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-4.0.3'
         ],
         category: 'web',
         tools: [
@@ -131,10 +129,10 @@ const portfolioItems = [
             arabic: 'قمت بتصميم مجموعة متكاملة من المواد التسويقية لمطعم، تضمنت المواد تصميم الملصقات الإعلانية، والكتيبات التعريفية، وبطاقات الدعوة، والشعارات الخاصة بالفعالية، والافتات الإعلانية، بالإضافة إلى مواد التسويق الرقمي للنشر على منصات التواصل الاجتماعي. قمت بتطوير هوية بصرية متميزة للمطعم تعكس أجواءه الفريدة، مع الحفاظ على تناسق جميع العناصر البصرية.',
             english: 'I designed an integrated set of marketing materials for a restaurant. The materials included designing advertising posters, introductory brochures, invitation cards, event logos, advertising banners, as well as digital marketing materials for publishing on social media platforms. I developed a distinctive visual identity for the restaurant that reflects its unique atmosphere, while maintaining consistency of all visual elements.'
         },
-        image: '/images/projects/marketing/image.png',
+        image: '/Hanan-Salih/images/projects/marketing/image.png',
         images: [
-            '/images/projects/marketing/img2.png',
-            '/images/projects/marketing/img3.png',
+            '/Hanan-Salih/images/projects/marketing/img2.png',
+            '/Hanan-Salih/images/projects/marketing/img3.png',
             
         ],
         category: 'marketing',
@@ -159,10 +157,10 @@ const portfolioItems = [
             arabic: 'قمت بتصميم سلسلة من المنشورات لمنصة تقنية جديدة، تهدف إلى توعية المستخدمين بالتكنولوجيا الحديثة. استخدمت لغة سهلة الفهم، مع صياغة جاذبة لجذب انتباه المستخدمين. تضمن التصميم استخدام الألوان والصور والخطوط بشكل جيد لجذب الانتباه وتسهيل القراءة.',
             english: 'I designed a series of posts for a new tech platform, aiming to educate users about modern technology. I used easy-to-understand language, with engaging phrasing to grab users\' attention. The design included the use of colors, images, and typography to attract attention and facilitate reading.'
         },
-        image: '/images/projects/devs/image.png',
+        image: '/Hanan-Salih/images/projects/devs/image.png',
         images: [
-            '/images/projects/devs/img2.png',
-            '/images/projects/devs/img3.png',
+            '/Hanan-Salih/images/projects/devs/img2.png',
+            '/Hanan-Salih/images/projects/devs/img3.png',
         ],
         category: 'marketing',
         tools: [
@@ -186,7 +184,7 @@ const portfolioItems = [
             arabic: 'قمت بتصميم واجهة مستخدم كاملة لتطبيق جوال مخصص للياقة البدنية والصحة. تضمن المشروع تصميم جميع شاشات التطبيق بدءًا من شاشات التسجيل وإنشاء الحساب، والشاشة الرئيسية، وشاشات متابعة التمارين والنظام الغذائي، وشاشات التقارير الإحصائية. ركزت في التصميم على سهولة الاستخدام وتجربة مستخدم سلسة مع واجهة جذابة وحديثة تشجع المستخدمين على الاستمرار في استخدام التطبيق.',
             english: 'I designed a complete user interface for a mobile application dedicated to fitness and health. The project included designing all application screens, starting from registration and account creation screens, the main screen, exercise and diet tracking screens, and statistical report screens. In the design, I focused on ease of use and a smooth user experience with an attractive and modern interface that encourages users to continue using the application.'
         },
-        image: '/images/projects/app/image.png',
+        image: '/Hanan-Salih/images/projects/app/image.png',
         images: [
             'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3',
             
@@ -213,7 +211,7 @@ const portfolioItems = [
             arabic: 'قمت بتصميم مجموعة متنوعة من منشورات وقوالب وسائل التواصل الاجتماعي لشركة عقارية. تضمن المشروع تصميم منشورات للمشاريع العقارية، والعروض الترويجية، والمحتوى التعليمي، بالإضافة إلى تصميم صور الغلاف وصور الملف الشخصي للحسابات على مختلف المنصات. طورت أسلوبًا بصريًا موحدًا يعكس احترافية الشركة ومكانتها في السوق العقاري، مع مراعاة معايير وأبعاد كل منصة من منصات التواصل الاجتماعي.',
             english: 'I designed a variety of social media posts and templates for a real estate company. The project included designing posts for real estate projects, promotional offers, and educational content, in addition to designing cover photos and profile pictures for accounts on various platforms. I developed a unified visual style that reflects the company\'s professionalism and position in the real estate market, taking into account the standards and dimensions of each social media platform.'
         },
-        image: '/images/projects/social_media_designs/image.png',
+        image: '/Hanan-Salih/images/projects/social_media_designs/image.png',
         images: [
             'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3',
         ],

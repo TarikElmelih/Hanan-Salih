@@ -129,10 +129,10 @@ const portfolioItems = [
             arabic: 'قمت بتصميم مجموعة متكاملة من المواد التسويقية لمطعم، تضمنت المواد تصميم الملصقات الإعلانية، والكتيبات التعريفية، وبطاقات الدعوة، والشعارات الخاصة بالفعالية، والافتات الإعلانية، بالإضافة إلى مواد التسويق الرقمي للنشر على منصات التواصل الاجتماعي. قمت بتطوير هوية بصرية متميزة للمطعم تعكس أجواءه الفريدة، مع الحفاظ على تناسق جميع العناصر البصرية.',
             english: 'I designed an integrated set of marketing materials for a restaurant. The materials included designing advertising posters, introductory brochures, invitation cards, event logos, advertising banners, as well as digital marketing materials for publishing on social media platforms. I developed a distinctive visual identity for the restaurant that reflects its unique atmosphere, while maintaining consistency of all visual elements.'
         },
-        image: '/Hanan-Salih/images/projects/marketing/image.jpeg',
+        image: '/Hanan-Salih/images/projects/marketing/image (2).jpeg',
         images: [
-            '/Hanan-Salih/images/projects/marketing/img2.jpeg',
-            '/Hanan-Salih/images/projects/marketing/img3.jpeg',
+            '/Hanan-Salih/images/projects/marketing/img2 (1).jpeg',
+            '/Hanan-Salih/images/projects/marketing/img3 (1).jpeg',
             
         ],
         category: 'marketing',
@@ -157,7 +157,7 @@ const portfolioItems = [
             arabic: 'قمت بتصميم سلسلة من المنشورات لمنصة تقنية جديدة، تهدف إلى توعية المستخدمين بالتكنولوجيا الحديثة. استخدمت لغة سهلة الفهم، مع صياغة جاذبة لجذب انتباه المستخدمين. تضمن التصميم استخدام الألوان والصور والخطوط بشكل جيد لجذب الانتباه وتسهيل القراءة.',
             english: 'I designed a series of posts for a new tech platform, aiming to educate users about modern technology. I used easy-to-understand language, with engaging phrasing to grab users\' attention. The design included the use of colors, images, and typography to attract attention and facilitate reading.'
         },
-        image: '/Hanan-Salih/images/projects/devs/image.jpeg',
+        image: '/Hanan-Salih/images/projects/devs/image (1).jpeg',
         images: [
             '/Hanan-Salih/images/projects/devs/img2.jpeg',
             '/Hanan-Salih/images/projects/devs/img3.jpeg',
@@ -211,7 +211,7 @@ const portfolioItems = [
             arabic: 'قمت بتصميم مجموعة متنوعة من منشورات وقوالب وسائل التواصل الاجتماعي لشركة عقارية. تضمن المشروع تصميم منشورات للمشاريع العقارية، والعروض الترويجية، والمحتوى التعليمي، بالإضافة إلى تصميم صور الغلاف وصور الملف الشخصي للحسابات على مختلف المنصات. طورت أسلوبًا بصريًا موحدًا يعكس احترافية الشركة ومكانتها في السوق العقاري، مع مراعاة معايير وأبعاد كل منصة من منصات التواصل الاجتماعي.',
             english: 'I designed a variety of social media posts and templates for a real estate company. The project included designing posts for real estate projects, promotional offers, and educational content, in addition to designing cover photos and profile pictures for accounts on various platforms. I developed a unified visual style that reflects the company\'s professionalism and position in the real estate market, taking into account the standards and dimensions of each social media platform.'
         },
-        image: '/Hanan-Salih/images/projects/social_media_designs/image.jpeg',
+        image: '/Hanan-Salih/images/projects/social_media_designs/image (3).jpeg',
         images: [
             'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3',
         ],

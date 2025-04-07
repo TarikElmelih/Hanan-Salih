@@ -23,6 +23,43 @@ function toggleLanguage() {
     }
 }
 
+// Check for contact form status after redirect
+document.addEventListener('DOMContentLoaded', function() {
+    // Check URL for form submission status
+    const urlParams = new URLSearchParams(window.location.search);
+    const status = urlParams.get('status');
+    const contactForm = document.getElementById('contact-form');
+    
+    if (status && contactForm) {
+        const formMessage = document.createElement('div');
+        formMessage.classList.add('form-message');
+        
+        if (status === 'success') {
+            formMessage.classList.add('form-success');
+            formMessage.innerHTML = `
+                <p class="arabic">تم إرسال رسالتك بنجاح! سنتواصل معك قريبًا.</p>
+                <p class="english">Your message has been sent successfully! We'll get back to you soon.</p>
+            `;
+        } else if (status === 'error') {
+            formMessage.classList.add('form-error');
+            formMessage.innerHTML = `
+                <p class="arabic">حدث خطأ أثناء إرسال رسالتك. يرجى المحاولة مرة أخرى.</p>
+                <p class="english">An error occurred while sending your message. Please try again.</p>
+            `;
+        }
+        
+        contactForm.prepend(formMessage);
+        
+        // Hide message after 5 seconds
+        setTimeout(() => {
+            formMessage.style.opacity = '0';
+            setTimeout(() => {
+                formMessage.remove();
+            }, 500);
+        }, 5000);
+    }
+});
+
 // Portfolio Items Data
 const portfolioItems = [
     {
@@ -31,18 +68,18 @@ const portfolioItems = [
             english: 'Brand Identity Design'
         },
         description: {
-            arabic: 'تصميم هوية بصرية متكاملة لشركة ناشئة تعمل في مجال التكنولوجيا، شاملة الشعار والألوان والخطوط وجميع عناصر الهوية.',
-            english: 'Complete brand identity design for a tech startup, including logo, colors, typography, and all identity elements.'
+            arabic: 'تصميم هوية بصرية متكاملة لشركة ناشئة تعمل في مجال الخدمات المالية، شاملة الشعار والألوان والخطوط وجميع عناصر الهوية.',
+            english: 'Complete brand identity design for a Finance startup, including logo, colors, typography, and all identity elements.'
         },
         detailedDescription: {
-            arabic: 'قمت بتصميم هوية بصرية متكاملة لشركة ناشئة في مجال التكنولوجيا. تضمن المشروع تصميم شعار مميز وفريد يعكس قيم الشركة ورؤيتها، واختيار مجموعة ألوان متناسقة تعبر عن روح العلامة التجارية، بالإضافة إلى تحديد الخطوط المناسبة واستخدامها في جميع العناصر. كما شمل المشروع تصميم قرطاسية الشركة من بطاقات عمل وأوراق رسمية ومغلفات وغيرها من المواد المطبوعة.',
-            english: 'I designed a comprehensive brand identity for a tech startup. The project included creating a unique logo that reflects the company\'s values and vision, selecting a harmonious color palette that expresses the brand spirit, as well as defining appropriate typography and using it across all elements. The project also included designing company stationery from business cards, letterheads, envelopes, and other printed materials.'
+            arabic: 'قمت بتصميم هوية بصرية متكاملة لشركة ناشئة في مجال الخدمات المالية. تضمن المشروع تصميم شعار مميز وفريد يعكس قيم الشركة ورؤيتها، واختيار مجموعة ألوان متناسقة تعبر عن روح العلامة التجارية، بالإضافة إلى تحديد الخطوط المناسبة واستخدامها في جميع العناصر. كما شمل المشروع تصميم قرطاسية الشركة من بطاقات عمل وأوراق رسمية ومغلفات وغيرها من المواد المطبوعة.',
+            english: 'I designed a comprehensive brand identity for a Finance startup. The project included creating a unique logo that reflects the company\'s values and vision, selecting a harmonious color palette that expresses the brand spirit, as well as defining appropriate typography and using it across all elements. The project also included designing company stationery from business cards, letterheads, envelopes, and other printed materials.'
         },
-        image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3',
+        image: '/images/projects/alyazan/image.png',
         images: [
-            'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3',
-            'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3',
-            'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3'
+            '/images/projects/alyazan/تصميم بدون عنوان (3).png',
+            '/images/projects/alyazan/تصميم بدون عنوان (4).png',
+            '/images/projects/alyazan/تصميم بدون عنوان (6).png'
         ],
         category: 'branding',
         tools: [
@@ -50,7 +87,8 @@ const portfolioItems = [
             { name: 'Adobe Photoshop', icon: 'fa-adobe' },
             { name: 'Adobe InDesign', icon: 'fa-adobe' }
         ],
-        colors: ['#FF6B6B', '#4ECDC4', '#2C3E50', '#F7F9FC']
+        colors: ['#c4ff61', '#000000', '#d7ff94', '#b1ff2e', '#1a1a1a', '#eaffc7'],
+        projectLink: 'https://www.behance.net/gallery/brand-identity-project-1'
     },
     {
         title: {
@@ -58,14 +96,14 @@ const portfolioItems = [
             english: 'Website UI Design'
         },
         description: {
-            arabic: 'تصميم واجهة مستخدم لموقع تجارة إلكترونية متخصص في بيع المنتجات الحرفية والتراثية.',
-            english: 'User interface design for an e-commerce website specializing in selling handcrafted and heritage products.'
+            arabic: 'تصميم واجهة مستخدم لموقع تعليمي متخصص في التعليم الالكتروني.',
+            english: 'Design of a user interface for an educational website specializing in e-learning.'
         },
         detailedDescription: {
-            arabic: 'قمت بتصميم واجهة مستخدم كاملة لموقع تجارة إلكترونية متخصص في بيع المنتجات الحرفية والتراثية. ركزت في التصميم على إبراز جمال المنتجات اليدوية مع الحفاظ على سهولة الاستخدام وتجربة مستخدم سلسة. استخدمت عناصر بصرية مستوحاة من التراث لإضفاء طابع أصيل على الموقع، مع الحفاظ على مظهر عصري وجذاب. تضمن المشروع تصميم الصفحة الرئيسية وصفحات المنتجات وعربة التسوق وصفحة الدفع.',
-            english: 'I designed a complete user interface for an e-commerce website specializing in selling handcrafted and heritage products. In the design, I focused on highlighting the beauty of handmade products while maintaining ease of use and a smooth user experience. I used visual elements inspired by heritage to add an authentic character to the site, while maintaining a modern and attractive appearance. The project included designing the homepage, product pages, shopping cart, and checkout page.'
+            arabic: 'قمت بتصميم واجهة مستخدم متكاملة لموقع تعليمي متخصص في التعليم الالكتروني. ركزت في التصميم على سهولة الاستخدام وتجربة مستخدم سلسة، مع توفير ميزات تفاعلية لتعزيز التعلم. تضمن المشروع تصميم الصفحة الرئيسية وصفحات الدورات التدريبية وصفحات الملف الشخصي، بالإضافة إلى ميزات التفاعل مع المعلمين والطلاب.',
+            english: 'I designed a comprehensive user interface for an educational website specializing in e-learning. In the design, I focused on ease of use and a smooth user experience, with interactive features to enhance learning. The project included designing the homepage, course pages, profile pages, as well as features for interaction with teachers and students.'
         },
-        image: 'https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-4.0.3',
+        image: '/images/projects/khatwa/khatwa.png',
         images: [
             'https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-4.0.3',
             'https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-4.0.3',
@@ -77,7 +115,8 @@ const portfolioItems = [
             { name: 'Adobe XD', icon: 'fa-adobe' },
             { name: 'Adobe Photoshop', icon: 'fa-adobe' }
         ],
-        colors: ['#FF6B6B', '#4ECDC4', '#2C3E50', '#F7F9FC']
+        colors: ['#e2f3d0', '#91bc40', '#837e7d', '#484747'],
+        projectLink: 'https://www.figma.com/website-design-project-2'
     },
     {
         title: {
@@ -85,18 +124,18 @@ const portfolioItems = [
             english: 'Marketing Campaign Design'
         },
         description: {
-            arabic: 'تصميم مجموعة متكاملة من المواد التسويقية لمهرجان فني وثقافي سنوي.',
-            english: 'Design of a comprehensive set of marketing materials for an annual arts and cultural festival.'
+            arabic: 'تصميم مجموعة متكاملة من المواد التسويقية لمطعم.',
+            english: 'Design of a comprehensive set of marketing materials for a restaurant.'
         },
         detailedDescription: {
-            arabic: 'قمت بتصميم مجموعة متكاملة من المواد التسويقية لمهرجان فني وثقافي سنوي. تضمنت المواد تصميم الملصقات الإعلانية بأحجام مختلفة، والكتيبات التعريفية، وبطاقات الدعوة، والشعارات الخاصة بالفعالية، والافتات الإعلانية، بالإضافة إلى مواد التسويق الرقمي للنشر على منصات التواصل الاجتماعي. قمت بتطوير هوية بصرية متميزة للمهرجان تعكس تنوع الفعاليات الثقافية والفنية المقدمة، مع الحفاظ على تناسق جميع العناصر البصرية.',
-            english: 'I designed an integrated set of marketing materials for an annual arts and cultural festival. The materials included designing advertising posters in different sizes, introductory brochures, invitation cards, event logos, advertising banners, as well as digital marketing materials for publishing on social media platforms. I developed a distinctive visual identity for the festival that reflects the diversity of cultural and artistic events presented, while maintaining consistency of all visual elements.'
+            arabic: 'قمت بتصميم مجموعة متكاملة من المواد التسويقية لمطعم، تضمنت المواد تصميم الملصقات الإعلانية، والكتيبات التعريفية، وبطاقات الدعوة، والشعارات الخاصة بالفعالية، والافتات الإعلانية، بالإضافة إلى مواد التسويق الرقمي للنشر على منصات التواصل الاجتماعي. قمت بتطوير هوية بصرية متميزة للمطعم تعكس أجواءه الفريدة، مع الحفاظ على تناسق جميع العناصر البصرية.',
+            english: 'I designed an integrated set of marketing materials for a restaurant. The materials included designing advertising posters, introductory brochures, invitation cards, event logos, advertising banners, as well as digital marketing materials for publishing on social media platforms. I developed a distinctive visual identity for the restaurant that reflects its unique atmosphere, while maintaining consistency of all visual elements.'
         },
-        image: 'https://images.unsplash.com/photo-1523726491678-bf852e717f6a?ixlib=rb-4.0.3',
+        image: '/images/projects/marketing/image.png',
         images: [
-            'https://images.unsplash.com/photo-1523726491678-bf852e717f6a?ixlib=rb-4.0.3',
-            'https://images.unsplash.com/photo-1523726491678-bf852e717f6a?ixlib=rb-4.0.3',
-            'https://images.unsplash.com/photo-1523726491678-bf852e717f6a?ixlib=rb-4.0.3'
+            '/images/projects/marketing/img2.png',
+            '/images/projects/marketing/img3.png',
+            
         ],
         category: 'marketing',
         tools: [
@@ -104,34 +143,35 @@ const portfolioItems = [
             { name: 'Adobe Photoshop', icon: 'fa-adobe' },
             { name: 'Canva', icon: 'fa-palette' }
         ],
-        colors: ['#FF6B6B', '#4ECDC4', '#2C3E50', '#F7F9FC']
+        colors: ['#FF6B6B', '#4ECDC4', '#2C3E50', '#F7F9FC'],
+        projectLink: 'https://www.behance.net/gallery/marketing-campaign-project'
     },
     {
         title: {
-            arabic: 'تصميم التغليف',
-            english: 'Packaging Design'
+            arabic: 'تصميم منشورات لمبادرة تقنية',
+            english: 'Design of Posts for a Tech Initiative'
         },
         description: {
-            arabic: 'تصميم عبوات وتغليف لمنتجات مستحضرات تجميل طبيعية.',
-            english: 'Packaging design for natural cosmetic products.'
+            arabic: 'تصميم منشورات لمنصة تقنية جديدة.',
+            english: 'Design of posts for a new tech platform.'
         },
         detailedDescription: {
-            arabic: 'قمت بتصميم سلسلة متكاملة من عبوات وتغليف منتجات مستحضرات التجميل الطبيعية لعلامة تجارية محلية. استوحيت التصميم من العناصر الطبيعية المستخدمة في المنتجات، واعتمدت على ألوان هادئة تعكس نقاء المكونات وطبيعتها العضوية. قمت بتصميم الملصقات والصناديق والعبوات بأحجام مختلفة، مع الحفاظ على هوية موحدة تساعد في التعرف على المنتجات بسهولة على رفوف المتاجر.',
-            english: 'I designed an integrated series of packaging for natural cosmetic products for a local brand. I drew inspiration from the natural elements used in the products, and relied on calm colors that reflect the purity of the ingredients and their organic nature. I designed labels, boxes and containers in different sizes, while maintaining a unified identity that helps in easily identifying products on store shelves.'
+            arabic: 'قمت بتصميم سلسلة من المنشورات لمنصة تقنية جديدة، تهدف إلى توعية المستخدمين بالتكنولوجيا الحديثة. استخدمت لغة سهلة الفهم، مع صياغة جاذبة لجذب انتباه المستخدمين. تضمن التصميم استخدام الألوان والصور والخطوط بشكل جيد لجذب الانتباه وتسهيل القراءة.',
+            english: 'I designed a series of posts for a new tech platform, aiming to educate users about modern technology. I used easy-to-understand language, with engaging phrasing to grab users\' attention. The design included the use of colors, images, and typography to attract attention and facilitate reading.'
         },
-        image: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3',
+        image: '/images/projects/devs/image.png',
         images: [
-            'https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3',
-            'https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3',
-            'https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3'
+            '/images/projects/devs/img2.png',
+            '/images/projects/devs/img3.png',
         ],
-        category: 'branding',
+        category: 'marketing',
         tools: [
-            { name: 'Adobe Illustrator', icon: 'fa-adobe' },
             { name: 'Adobe Photoshop', icon: 'fa-adobe' },
-            { name: 'Adobe Dimension', icon: 'fa-adobe' }
+            { name: 'Canva', icon: 'fa-palette' },
+            { name: 'Adobe Illustrator', icon: 'fa-adobe' }
         ],
-        colors: ['#FF6B6B', '#4ECDC4', '#2C3E50', '#F7F9FC']
+        colors: ['#FF6B6B', '#4ECDC4', '#2C3E50', '#F7F9FC'],
+        projectLink: 'https://www.behance.net/gallery/tech-initiative-posts'
     },
     {
         title: {
@@ -146,11 +186,10 @@ const portfolioItems = [
             arabic: 'قمت بتصميم واجهة مستخدم كاملة لتطبيق جوال مخصص للياقة البدنية والصحة. تضمن المشروع تصميم جميع شاشات التطبيق بدءًا من شاشات التسجيل وإنشاء الحساب، والشاشة الرئيسية، وشاشات متابعة التمارين والنظام الغذائي، وشاشات التقارير الإحصائية. ركزت في التصميم على سهولة الاستخدام وتجربة مستخدم سلسة مع واجهة جذابة وحديثة تشجع المستخدمين على الاستمرار في استخدام التطبيق.',
             english: 'I designed a complete user interface for a mobile application dedicated to fitness and health. The project included designing all application screens, starting from registration and account creation screens, the main screen, exercise and diet tracking screens, and statistical report screens. In the design, I focused on ease of use and a smooth user experience with an attractive and modern interface that encourages users to continue using the application.'
         },
-        image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3',
+        image: '/images/projects/app/image.png',
         images: [
             'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3',
-            'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3',
-            'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3'
+            
         ],
         category: 'web',
         tools: [
@@ -158,7 +197,8 @@ const portfolioItems = [
             { name: 'Adobe XD', icon: 'fa-adobe' },
             { name: 'Sketch', icon: 'fa-pencil-alt' }
         ],
-        colors: ['#FF6B6B', '#4ECDC4', '#2C3E50', '#F7F9FC']
+        colors: ['#FF6B6B', '#4ECDC4', '#2C3E50', '#F7F9FC'],
+        projectLink: 'https://www.behance.net/gallery/mobile-app-design-project'
     },
     {
         title: {
@@ -173,11 +213,9 @@ const portfolioItems = [
             arabic: 'قمت بتصميم مجموعة متنوعة من منشورات وقوالب وسائل التواصل الاجتماعي لشركة عقارية. تضمن المشروع تصميم منشورات للمشاريع العقارية، والعروض الترويجية، والمحتوى التعليمي، بالإضافة إلى تصميم صور الغلاف وصور الملف الشخصي للحسابات على مختلف المنصات. طورت أسلوبًا بصريًا موحدًا يعكس احترافية الشركة ومكانتها في السوق العقاري، مع مراعاة معايير وأبعاد كل منصة من منصات التواصل الاجتماعي.',
             english: 'I designed a variety of social media posts and templates for a real estate company. The project included designing posts for real estate projects, promotional offers, and educational content, in addition to designing cover photos and profile pictures for accounts on various platforms. I developed a unified visual style that reflects the company\'s professionalism and position in the real estate market, taking into account the standards and dimensions of each social media platform.'
         },
-        image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3',
+        image: '/images/projects/social_media_designs/image.png',
         images: [
             'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3',
-            'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3',
-            'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3'
         ],
         category: 'marketing',
         tools: [
@@ -185,7 +223,8 @@ const portfolioItems = [
             { name: 'Canva', icon: 'fa-palette' },
             { name: 'Adobe Illustrator', icon: 'fa-adobe' }
         ],
-        colors: ['#FF6B6B', '#4ECDC4', '#2C3E50', '#F7F9FC']
+        colors: ['#FF6B6B', '#4ECDC4', '#2C3E50', '#F7F9FC'],
+        projectLink: 'https://www.behance.net/gallery/social-media-design-project'
     }
 ];
 
@@ -342,6 +381,8 @@ function openProjectModal(item) {
     const toolsList = modal.querySelector('.tools-list');
     const colorPalette = modal.querySelector('.color-palette');
     const galleryThumbs = modal.querySelector('.gallery-thumbs');
+    const projectActionBtnArabic = modal.querySelector('.project-actions .arabic');
+    const projectActionBtnEnglish = modal.querySelector('.project-actions .english');
     
     // Set modal content
     modalImage.src = item.image;
@@ -352,6 +393,18 @@ function openProjectModal(item) {
     modalEnglishDesc.textContent = item.detailedDescription.english;
     modalCategoryArabic.textContent = getCategoryName(item.category, 'arabic');
     modalCategoryEnglish.textContent = getCategoryName(item.category, 'english');
+    
+    // Set project link if available
+    if (item.projectLink) {
+        projectActionBtnArabic.href = item.projectLink;
+        projectActionBtnEnglish.href = item.projectLink;
+        projectActionBtnArabic.style.display = 'inline-block';
+        projectActionBtnEnglish.style.display = 'inline-block';
+    } else {
+        // Hide buttons if no link is available
+        projectActionBtnArabic.style.display = 'none';
+        projectActionBtnEnglish.style.display = 'none';
+    }
     
     // Set tools used
     toolsList.innerHTML = item.tools.map(tool => `
@@ -479,6 +532,50 @@ if (contactForm) {
     });
 }
 
+// WhatsApp Contact Form Function
+function sendWhatsAppMessage(event) {
+    event.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    // Format the message for WhatsApp
+    const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+    
+    // Replace with your actual WhatsApp number
+    const whatsappNumber = '994401169009'; 
+    
+    // Create WhatsApp URL
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappURL, '_blank');
+    
+    // Show success message
+    const contactForm = document.getElementById('contact-form');
+    const formMessage = document.createElement('div');
+    formMessage.classList.add('form-message', 'form-success');
+    formMessage.innerHTML = `
+        <p class="arabic">تم إعداد رسالتك! سيتم فتح واتساب لإرسالها.</p>
+        <p class="english">Your message is ready! WhatsApp will open to send it.</p>
+    `;
+    
+    contactForm.prepend(formMessage);
+    
+    // Hide message after 5 seconds
+    setTimeout(() => {
+        formMessage.style.opacity = '0';
+        setTimeout(() => {
+            formMessage.remove();
+        }, 500);
+    }, 5000);
+    
+    // Reset form
+    contactForm.reset();
+}
+
 // Initialize when the page loads
 document.addEventListener('DOMContentLoaded', function() {
     // Create initial portfolio items (first page)
@@ -536,6 +633,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add navbar scroll effect
     setupNavbarScroll();
+    
+    // Initialize design process section
+    initDesignProcess();
 });
 
 // Custom cursor effect
@@ -1153,4 +1253,106 @@ style.textContent = `
         overflow: hidden;
     }
 `;
-document.head.appendChild(style); 
+document.head.appendChild(style);
+
+// Design Process Animation and Interaction
+function initDesignProcess() {
+    const processSteps = document.querySelectorAll('.process-step');
+    
+    // Initial animation on page load for the first step
+    if (processSteps.length > 0) {
+        setTimeout(() => {
+            processSteps[0].classList.add('active');
+        }, 500);
+    }
+    
+    // Animate steps when they come into view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const step = entry.target;
+                const stepIndex = parseInt(step.getAttribute('data-step')) - 1;
+                
+                // Add active class with delay based on step index
+                setTimeout(() => {
+                    step.classList.add('active');
+                }, 200 * stepIndex);
+                
+                // Unobserve after animation
+                observer.unobserve(step);
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    // Observe all steps except the first one (which is already animated)
+    processSteps.forEach((step, index) => {
+        if (index > 0) {
+            observer.observe(step);
+        }
+    });
+    
+    // Add hover effect with interactive line animation
+    const pathLine = document.querySelector('.path-line');
+    
+    if (pathLine) {
+        processSteps.forEach(step => {
+            step.addEventListener('mouseenter', () => {
+                const stepIndex = parseInt(step.getAttribute('data-step'));
+                
+                // Update all steps based on current hover
+                processSteps.forEach(s => {
+                    const idx = parseInt(s.getAttribute('data-step'));
+                    if (idx <= stepIndex) {
+                        s.classList.add('active');
+                    }
+                });
+                
+                // Change path line color based on step
+                const colors = ['#ff6b6b', '#ff9a66', '#ffd166', '#66c2ff', '#66ffa6'];
+                const stepColor = colors[stepIndex - 1] || colors[0];
+                
+                pathLine.style.background = `linear-gradient(to bottom, transparent, ${stepColor}, ${stepColor}, transparent)`;
+            });
+            
+            step.addEventListener('mouseleave', () => {
+                // Reset path line color
+                pathLine.style.background = 'linear-gradient(to bottom, transparent, var(--primary-color), var(--primary-color), transparent)';
+            });
+        });
+    }
+    
+    // Add interactive effect to inspire box
+    const inspireBox = document.querySelector('.inspire-box');
+    if (inspireBox) {
+        inspireBox.addEventListener('mousemove', (e) => {
+            const box = inspireBox.getBoundingClientRect();
+            const mouseX = e.clientX - box.left;
+            const mouseY = e.clientY - box.top;
+            
+            // Calculate rotation based on mouse position
+            const rotateX = (mouseY / box.height - 0.5) * 10; // -5 to 5 degrees
+            const rotateY = (mouseX / box.width - 0.5) * -10; // -5 to 5 degrees
+            
+            // Apply 3D transform effect
+            inspireBox.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            
+            // Add shine effect
+            const shine = inspireBox.querySelector('.inspire-overlay');
+            if (shine) {
+                const percentX = mouseX / box.width * 100;
+                const percentY = mouseY / box.height * 100;
+                shine.style.background = `radial-gradient(circle at ${percentX}% ${percentY}%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 20%, transparent 60%)`;
+            }
+        });
+        
+        inspireBox.addEventListener('mouseleave', () => {
+            // Reset transform and shine effect
+            inspireBox.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+            
+            const shine = inspireBox.querySelector('.inspire-overlay');
+            if (shine) {
+                shine.style.background = 'url("/images/pattern.svg")';
+            }
+        });
+    }
+} 

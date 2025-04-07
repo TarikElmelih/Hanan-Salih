@@ -225,6 +225,38 @@ function createPortfolioItems(items, viewType = 'grid') {
         
         portfolioShowcase.appendChild(projectCard);
     });
+    
+    // Re-attach cursor grow effect to new project cards
+    if (typeof initCustomCursor === 'function') {
+        const newProjectCards = document.querySelectorAll('.project-card');
+        newProjectCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const cursor = document.querySelector('.custom-cursor');
+                if (cursor) {
+                    cursor.classList.add('cursor-grow');
+                    const cursorCircle = cursor.querySelector('.cursor-circle');
+                    if (cursorCircle) {
+                        cursorCircle.style.width = '60px';
+                        cursorCircle.style.height = '60px';
+                        cursorCircle.style.backgroundColor = 'rgba(255, 107, 107, 0.1)';
+                    }
+                }
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                const cursor = document.querySelector('.custom-cursor');
+                if (cursor) {
+                    cursor.classList.remove('cursor-grow');
+                    const cursorCircle = cursor.querySelector('.cursor-circle');
+                    if (cursorCircle) {
+                        cursorCircle.style.width = '40px';
+                        cursorCircle.style.height = '40px';
+                        cursorCircle.style.backgroundColor = 'transparent';
+                    }
+                }
+            });
+        });
+    }
 }
 
 // Helper function to get category name in selected language
@@ -498,6 +530,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize tool boxes interaction
     initToolBoxes();
+    
+    // Setup responsive navbar
+    setupResponsiveNavbar();
+    
+    // Add navbar scroll effect
+    setupNavbarScroll();
 });
 
 // Custom cursor effect
@@ -551,7 +589,7 @@ function initCustomCursor() {
     });
     
     // Cursor grows on clickable elements
-    const clickables = document.querySelectorAll('a, button, .portfolio-item, .service-card, .social-link');
+    const clickables = document.querySelectorAll('a, button, .project-card, .service-card, .social-link, .filter-btn, .view-btn, .pagination-btn');
     clickables.forEach(el => {
         el.addEventListener('mouseenter', () => {
             cursor.classList.add('cursor-grow');
@@ -571,7 +609,7 @@ function initCustomCursor() {
     document.body.style.cursor = 'none';
     
     // Hide on touch devices
-    if ('ontouchstart' in window) {
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0) {
         cursor.style.display = 'none';
         document.body.style.cursor = 'auto';
     }
@@ -1003,4 +1041,116 @@ function initToolBoxes() {
             }
         });
     });
-} 
+}
+
+// Setup responsive navbar functionality
+function setupResponsiveNavbar() {
+    const hamburger = document.createElement('div');
+    hamburger.className = 'hamburger';
+    hamburger.innerHTML = `
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    `;
+    
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelector('.nav-links');
+    const langSwitch = document.querySelector('.language-switch');
+    
+    // Insert hamburger menu before language switch
+    if (navbar && langSwitch) {
+        navbar.insertBefore(hamburger, langSwitch);
+    }
+    
+    // Toggle menu on hamburger click
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        document.body.classList.toggle('no-scroll'); // Prevent scrolling when menu is open
+    });
+    
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            }
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (
+            navLinks.classList.contains('active') && 
+            !navLinks.contains(e.target) && 
+            !hamburger.contains(e.target)
+        ) {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        }
+    });
+    
+    // Add language toggle to mobile menu for better accessibility
+    if (window.innerWidth <= 768) {
+        const mobileLangToggle = langSwitch.cloneNode(true);
+        mobileLangToggle.classList.add('mobile-lang-toggle');
+        navLinks.appendChild(mobileLangToggle);
+        
+        // Update original language toggle when mobile one is clicked
+        mobileLangToggle.querySelector('.lang-btn').addEventListener('click', () => {
+            toggleLanguage();
+        });
+    }
+    
+    // Update on window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+            
+            // Remove mobile language toggle if it exists
+            const mobileLangToggle = navLinks.querySelector('.mobile-lang-toggle');
+            if (mobileLangToggle) {
+                navLinks.removeChild(mobileLangToggle);
+            }
+        } else {
+            // Add mobile language toggle if it doesn't exist
+            if (!navLinks.querySelector('.mobile-lang-toggle')) {
+                const mobileLangToggle = langSwitch.cloneNode(true);
+                mobileLangToggle.classList.add('mobile-lang-toggle');
+                navLinks.appendChild(mobileLangToggle);
+                
+                // Update original language toggle when mobile one is clicked
+                mobileLangToggle.querySelector('.lang-btn').addEventListener('click', () => {
+                    toggleLanguage();
+                });
+            }
+        }
+    });
+}
+
+// Add navbar scroll effect
+function setupNavbarScroll() {
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+}
+
+// Add CSS for no scroll body state
+const style = document.createElement('style');
+style.textContent = `
+    body.no-scroll {
+        overflow: hidden;
+    }
+`;
+document.head.appendChild(style); 
